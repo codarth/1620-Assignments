@@ -1,0 +1,75 @@
+
+
+INSTRUCTIONS:   This  assignment  contains  three  problems.    Please  submit  your  source  code  as follows:
+– for Problem  1, write your code in a file named  a4addn.cc
+– for Problem  2, write your code in a file named  a4year.cc
+– for Problem  3, write your code in a file named  a4calendar.cc
+Use the instructions from the course lab page to prepare  and submit  your files using Moodle.
+A)  Please use your template.cc file for each of the specified files and then  fill in the required information.
+If you do not have a template.cc file please copy the one from the library.  The command  to copy is:
+”cp $L/samples/template.cc /assn”. Please see Arie if you have any questions  regarding  this. B)  if you have variables,  provide comments  where you specify the purpose  for the variables.
+
+
+PROBLEM 1: In class, we discussed the concept of function.  We have seen that function calls can be placed in C++ source code wherever expressions are allowed.  In particular, a function  call can be placed in the body of the same function.  This is called a recursive call.
+Recursive  calls are not something  new.  You have seen them  in mathematics possibly under  the name of 
+recurrence relations.   For  example,  if S(n)  = Pn
+ 
+i represents the  sum of the  first n natural numbers, 
+then  S(n)  can be also defined by the following recurrence  relation:
+
+ 
+
+S(n)  =
+ 
+(1,                        if n = 1
+n + S(n − 1),    if n > 1. 
+
+Define a C++ function  called addAll which receives a natural number  n as argument and which returns an  integer  equal  to  the  value  of S(n).   There  are  many  ways to  compute  S(n):   using  the  closed form expression,  using  loop statements, etc.   For  this  assignment,   you  are  asked  to  write  a recursive  C++ function  based  on the  recurrence  relation  above.  You will need an if  statement to distinguish the  base case (n = 1) from the general case (n > 1).
+Your program  should  prompt  the  user to enter a natural number  n,  then  it should  display  the  value of
+S(n)  or report  an error as in the examples.
+Example  1: Please enter a natural number: 10
+S(10) = 55
+Example  2: Please enter a natural number: 0
+0 is not a natural number
+
+
+PROBLEM 2: Recall  that every  C++ function  has  four  components:   a name,  an  optional  return value,  a possibly empty  list of parameters, and  a body.  Write  a program  in C++ where you define the following C++ functions.
+a)  Name:  isLeapYear
+Arguments:  one integer  y representing a year.  You may assume that isLeapYear  is only called with y
+positive.
+Return:  a Boolean expression,  true  if y is a leap year, false if y is not leap. b)  Name:  nrOfDaysInMonth
+Arguments:  an integer m representing a month, and an integer y representing a year.  m is 1 for January,
+2 for February, . . . 12 for December, as in a calendar.  You may assume that nrOfDaysInMonth is only called with m in the set {1, . . . , 12}.
+Return:   An integer  representing the  number  of days in month  m for year y.  For  example,  if m = 2 then  the return value is 28 when y is not a leap year and 29 when y is a leap year.
+c)  Name:  dayNumberInYear
+Arguments:   an  integer  d representing a day,  an  integer  m  representing a month,  and  an  integer  y
+representing a year.  The values for d, m, and y are as in a calendar. 
+
+
+
+Return:   the  number  of days since the  start of the  year for day  d and  month  m,  including  the  given date  and  the  first day of y.  For  example,  if (d, m, y) is (1, 1, 2014) the  return value is 1 because  the date  is the first day in the year.  For (1, 2, 2020), the return value is 32 because February 1st, 2020 is the 32-nd day since the start of the year 2020.
+More examples:  if the date  is (3, 3, 2014) (March  3rd 2014), then  the date  is day 62 of the year 2014. If the date  is (1, 3, 2000) (March  3rd 2000), then  this date  is day 63 of the year 2000 because 2000 is a leap year.
+Write  a program  that prompts  the user to enter a date and uses these functions  to output the day number in the year for the given date,  as returned by function  dayNumberInYear. Design the program  input  and output as in the example.
+Example:
+Please enter a date (d m y): 3 3 2014
+3:3:2014 is day 62 in year 2014.
+Hints:
+(a)  The three functions you are asked to write were chosen to help you in writing the program.  Use them. (b)  The midterm  exam had a question  about  checking whether  a year is leap.  A solution  to the midterm
+question  is posted  on Moodle.
+(c)  Use the same recursive technique  as in Problem  1 to define function dayNumberInYear. For example, if m = 1, the  function  should  simply return d, otherwise  it should  return d plus the  day number  of the last day of the previous  month.
+
+
+PROBLEM 3: Define a class named  Date  which has the following components:
+– Private integer  variables  for the day, month,  and year, with values as for Problem  2.
+– A public constructor taking  three  integer  arguments, the day, the month,  the year, and the day of the week for January 1st of the given year.  You can assume that the year is greater  than  or equal to 1900.
+– A public integer function  named  dayOfTheWeek  without parameters that returns the day of the week for the date  represented by the object.
+The day of the week is represented by an integer as follows: 0 for Sunday,  1, for Monday,  2 for Tuesday,
+. . . 6 for Saturday.
+– A public void function  named  printEn that writes to the standard output the date  in English format, as in “Tuesday March 4, 2014”.
+Calculating the day of the week:
+* Use the functions  you wrote for Problem  2 to determine  which day of the year the given date  is. These functions  need not be part  of the class.
+* Use the code from Assignment 2, Problem  2 to determine  the number  of leap years between  year 1900 and the year of the given date.  Write  this code in a separate  function similar to the functions  you wrote for Problem  2. A leap year has 366 days and a year that is not leap has 365. You now can determine the number  of days between  the given date  and January 1st 1900.
+* Use the fact that January 1st 1900 was Monday  to determine  the day of the week for the given date. Write  a program  that prompts  the user to enter a day, month,  and year as for Problem  2 and use function printEn to display its calendar  entry.  Please follow the messages in the example.
+Example:
+Please ender a date (day month year): 3 3 2014
+Monday March 3, 2014

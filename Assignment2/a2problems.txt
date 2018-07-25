@@ -1,0 +1,114 @@
+CPSC 1620 - Assignment 2
+(due Thr Feb 6, 23:55)
+
+
+INSTRUCTIONS:
+
+This assignment contains three problems. Please submit your source code
+as follows:
+- for Problem 1, write your code in a file named a2even.cc
+- for Problem 2, write your code in a file named a2leap.cc
+- for Problem 3, write your code in a file named a2cities.cc
+Use the instructions from the course lab page to prepare and submit
+your files using moodle.
+
+For full marks, please comment your source code by following this
+guideline: 
+
+A) comment your entire program by placing a comment block at the top
+of your file. Please specify in the comment block the following
+information: 
+  a1) Your name
+  a2) A brief description of program functionality. For example you
+	may write for Problem 2 the following sentence: "This program reads
+	a one digit integer and displays its four least significant bits".
+
+B) if you have variables, provide comments where you specify the
+purpose for the variables. 
+
+
+----------------------------------------------------------------------
+
+PROBLEM 1: 
+
+Suppose we are given two positive integers, x and y, with 0 < x <
+y. Write a program that prompts the user to enter the integers x and
+y, and then outputs the number of even integers between x and y
+including x and y. For example, if x and y are 2 and 4 respectively,
+then there are 2 even integers between 2 and 4 including 2 and 4. If x
+and y are 1 and 8 respectively, then there are 4 even integers between
+1 and 8.
+
+Please design your program so that the prompts and messages are
+displayed as in the following example. You may assume that x and y
+are entered so that x < y.
+
+Hint: it is not too difficult to determine the number of even integers
+between 0 and some integer z. Use this knowledge to answer the
+assignment question.
+
+Example:
+Please enter two integers: 2 9
+The number of even integers between 2 and 9 is 4
+
+
+
+PROBLEM 2: 
+
+A year is considered a leap year if:
+
+ a) it is divisible by 4 but not by 100 (examples of leap years: 96,
+ 104, 2016; examples of years that are not leap: 100, 300) 
+OR IF 
+ b) it is divisible by 400 (examples: 400, 800, 2000)
+
+Therefore, years 1100, 300, 2100 are not leap years because they are
+divisible by 100 and are not divisible by 400. Year 2000 is a leap
+year because, although it is divisible by 100, it is also divisible
+by 400. 
+
+Write a program that prompts the user to enter two years x and y with x
+< y and that outputs the number of leap years between x and y including x
+and y. 
+
+Please design your program so that the prompts and messages are
+displayed as in the following example. You may assume that x and y
+are entered so that x < y.
+
+Hint: extend the code you wrote for Problem 1.
+
+Example:
+Please enter two years: 1997 2004
+The number of leap years between 1997 and 2004 is 2
+
+
+
+PROBLEM 3: 
+
+A road in the shape of a circle is given. On this road, n cities
+labeled from 0 to n-1 in clockwise order along the road are uniformly
+distributed. This means that the road distance between any two
+adjacent cities is equal. The cities are approximated as points, and
+the circular road is the only road connecting the cities.
+
+Given a source city s and a target city t, determine how many cities
+need to be visited on the shortest path from s to t. The source and
+target cities are included in the count.
+
+Write a program that prompts the user to enter a value for n, s, and t
+and that displays the number of cities visited on the shortest path
+from s to t. 
+
+Please design your program so that the prompts and messages are
+displayed as in the following example. You may assume that the user
+enters acceptable values for n, s, and t.
+
+Example:
+Please enter the number of cities: 6
+Please enter a source and a destination: 4 0
+The number of cities visited is 3
+
+Hint: determine the number of cities visited along the clockwise
+direction and the counter-clockwise direction. Then, use an "if"
+statement to output the smaller value of the two. If statements are
+covered in Tuesday's lecture, Feb 4.

@@ -1,0 +1,115 @@
+CPSC 1620 - Assignment 1
+(due Thr Jan 23, 23:55)
+
+
+INSTRUCTIONS:
+
+This assignment contains three problems. Please submit your source code
+as follows:
+- for Problem 1, write your code in a file named a1invite.cc
+- for Problem 2, write your code in a file named a1binary.cc
+- for Problem 3, write your code in a file named a1bcd.cc
+Use the instructions from the course lab page to prepare and submit
+your files using moodle.
+
+For full marks, please comment your source code by following this
+guideline: 
+
+A) comment your entire program by placing a comment block at the top
+of your file. Please specify in the comment block the following
+information: 
+  a1) Your name
+  a2) A brief description of program functionality. For example you
+	may write for Problem 2 the following sentence: "This program reads
+	a one digit integer and displays its four least significant bits".
+
+B) if you have variables, provide comments where you specify the
+purpose for the variables. 
+
+
+----------------------------------------------------------------------
+
+PROBLEM 1: 
+
+Write a computer program that prints a party invitation. Feel free to
+design your invitation in any way you want, as long as your invitation
+obeys the following rules:
+
+a) The text of the invitation is surrounded by a rectangular margin;
+you are free to choose any character or character combination for the
+margin.
+
+b) The text of the invitation, not including the margin spans no more
+than 4 lines and is no wider than 70 characters. In the example given,
+the text of the invitation spans two lines.
+
+c) The text of the invitation must mention your name and a time. The
+time must be given in 24 hour format as in 14:00. The hour and minutes
+MUST BE PRINTED AS INTEGERS.
+
+Example of output:
+
++------------------------------------------------------+
+| You are invited to Homer Simpson's retirement party. |
+|        18:33 on April Fool's Day @ The Zoo           |
++------------------------------------------------------+
+
+
+
+PROBLEM 2: 
+
+Write a program that prompts the user to enter a single digit decimal
+integer (in the range 0 to 9) and then prints the four digit binary
+representation of the number. For example, the four digit binary
+representation of 1, 2, 5, and 9 is 0001, 0010, 0101, and 1001
+respectively.
+
+Recall how the conversion to the binary representation works: the last
+binary digit (bit) of some integer x is given by x mod 2 (the
+remainder of dividing x by 2). To get the second last bit of x, remove
+the last bit by taking the quotient of x divided by 2 (x/2). Then
+obtain the last bit from this quotient. Similarly, obtain the third last
+and fourth last bits. 
+
+You should assume that the user enters a valid integer in the range 0
+to 9. Please design your program so that the messages displayed follow
+the example below.
+
+Example:
+
+Please enter an integer between 0 and 9: 8
+1000
+
+Hint: you can display the four bit representation by outputting four
+separate expressions that evaluate to the 4th last, 3rd last, 2nd last
+and last bits of the value entered. Do not print any other characters in
+between these expressions.
+
+
+
+PROBLEM 3: 
+
+Binary coded decimal, or BCD in short, is an encoding of decimal
+numbers where each digit of the decimal representation of the number
+is encoded in binary by exactly four binary digits or bits.
+
+For example, number 7 in binary is represented by four bits as 0111,
+and number 4 by 0100, so number 74 in the BCD encoding is simply a
+concatenation of the binary representations for 7 and 4, namely
+01110100.
+
+Extend the code you already wrote for Problem 2, to output the BCD
+encoding of a two decimal integer (in the range 0 to 99). You should
+assume the user enters an integer in the correct range. Please design
+your program so that the messages displayed follow the example below:
+
+Example:
+
+Please enter an integer between 0 and 99: 63
+01100011
+
+Hint: Extract the second last DECIMAL digit of the number entered by
+the user and then use the code from Problem 2 to output its four bits,
+then repeat the process for the last DECIMAL digit of the number
+entered. In total, your code should output 8 integer expressions, one
+for each bit.
